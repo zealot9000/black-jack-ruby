@@ -1,4 +1,4 @@
-require_relative 'computer.rb'
+#require_relative 'computer.rb'
 
 class Player
     
