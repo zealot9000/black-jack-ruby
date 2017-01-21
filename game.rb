@@ -11,14 +11,15 @@ player = Player.new(gets.chomp)
 
 player.first_rate
 computer.first_rate
-bank |= 20
+BANK = 20
 
-player.player_deck << deck.first_draw
-computer.player_deck << deck.first_draw
+player.hand << deck.draw(2)
+computer.hand << deck.draw(2)
 
-puts player.player_deck
-puts player.money
-puts computer.player_deck
-puts bank
-puts deck.deck
+# puts "Computer cards: #{computer.player_hand_count}"
+
+puts "Player hand: #{player.print_hand}"
+puts "Player card sum: #{player.card_sum}"
+
+#puts deck.show_deck.get_value
 

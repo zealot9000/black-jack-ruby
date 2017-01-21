@@ -1,22 +1,68 @@
+require_relative 'card.rb'
+
 class Deck
-   
-  attr_reader :deck 
-   
+
+  attr_reader :deck
+
   def initialize
-    @deck = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-    deck.shuffle!
+    @deck = create_deck
+  end
+  
+  def draw(number_of_cards = 1)  
+    drawn_cards = []
+    number_of_cards.times do
+      drawn_cards << @deck.pop
+    end
+    return drawn_cards      
   end
 
-
-  def first_draw
-    @deck.shift(2)
-  end  
-  
-  def draw_next_cart
-    @deck.shift(0)
+  def size
+    @deck.size 
   end  
   
   private
+
+  def create_deck
+    suite = ['♠', '♣', '♥', '♦']
+    value = (2..10).to_a
+    value << :Jack << :Queen << :King << :Ace
+
+    deck = []
+
+    suite.each do |s|
+      value.each do |v|
+        card = Card.new(s, v)
+        deck << card
+      end
+    end
+    deck.shuffle!    
+  end  
+end
+
+
+
+
+
+
+# class Deck
+   
+#   attr_reader :deck 
+   
+#   def initialize
+#     @deck = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+#     deck.shuffle!
+#   end
+
+
+#   def first_draw
+#     @deck.shift(2)
+#   end  
   
-  attr_writer :deck
-end    
+#   def draw_next_card
+#     @deck.shift(0)
+#   end  
+  
+#   private
+  
+#   attr_writer :deck
+# end    
