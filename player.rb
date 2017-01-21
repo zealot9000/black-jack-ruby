@@ -1,5 +1,3 @@
-#require_relative 'computer.rb'
-
 class Player
     
   attr_reader :name, :money, :player_deck
@@ -10,11 +8,11 @@ class Player
     @player_deck = []
   end 
    
+  def first_rate
+    @money -= 10
+  end  
    
   private
    
   attr_writer :name, :money, :player_deck
-   
 end    
-
-  

@@ -8,17 +8,15 @@ class Deck
   end
 
 
-  def first_distribution
+  def first_draw
     @deck.shift(2)
   end  
   
-  def next_cart
+  def draw_next_cart
     @deck.shift(0)
   end  
   
   private
   
   attr_writer :deck
-  
-    
 end    
