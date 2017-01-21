@@ -1,25 +1,24 @@
 require_relative 'card.rb'
 
 class Deck
-
   attr_reader :deck
 
   def initialize
     @deck = create_deck
   end
-  
-  def draw(number_of_cards = 1)  
+
+  def draw(number_of_cards = 1)
     drawn_cards = []
     number_of_cards.times do
       drawn_cards << @deck.pop
     end
-    return drawn_cards      
+    drawn_cards
   end
 
   def size
-    @deck.size 
-  end  
-  
+    @deck.size
+  end
+
   private
 
   def create_deck
@@ -35,34 +34,7 @@ class Deck
         deck << card
       end
     end
-    deck.shuffle!    
-  end  
+    deck.shuffle!
+  end
 end
 
-
-
-
-
-
-# class Deck
-   
-#   attr_reader :deck 
-   
-#   def initialize
-#     @deck = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-#     deck.shuffle!
-#   end
-
-
-#   def first_draw
-#     @deck.shift(2)
-#   end  
-  
-#   def draw_next_card
-#     @deck.shift(0)
-#   end  
-  
-#   private
-  
-#   attr_writer :deck
-# end    
