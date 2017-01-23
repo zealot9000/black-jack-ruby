@@ -1,40 +1,39 @@
 require_relative 'card.rb'
 
 class Deck
-  attr_reader :deck
+  attr_reader :cards
 
   def initialize
-    @deck = create_deck
+    @cards = create_deck#.shuffle!
   end
 
   def draw(number_of_cards = 1)
-    drawn_cards = []
-    number_of_cards.times do
-      drawn_cards << @deck.pop
-    end
-    drawn_cards
+    number_of_cards.times.map { @cards.pop }
   end
 
   def size
-    @deck.size
+    @cards.size
   end
 
   private
 
   def create_deck
-    suite = ['♠', '♣', '♥', '♦']
-    value = (2..10).to_a
-    value << :Jack << :Queen << :King << :Ace
+    suite = SUITE
+    value = VALUE
 
     deck = []
 
     suite.each do |s|
       value.each do |v|
-        card = Card.new(s, v)
-        deck << card
+        deck.push(Card.new(s, v))
       end
     end
     deck.shuffle!
   end
-end
 
+  private 
+
+  SUITE = ['♠', '♣', '♥', '♦']
+  VALUE = (2..10).to_a
+  VALUE << :Jack << :Queen << :King << :Ace
+end
