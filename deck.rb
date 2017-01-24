@@ -1,6 +1,12 @@
 require_relative 'card.rb'
 
 class Deck
+  
+  
+  SUITE = ['♠', '♣', '♥', '♦']
+  VALUE = (2..10).to_a
+  VALUE << :Jack << :Queen << :King << :Ace
+  
   attr_reader :cards
 
   def initialize
@@ -30,10 +36,4 @@ class Deck
     end
     deck
   end
-
-  private 
-
-  SUITE = ['♠', '♣', '♥', '♦']
-  VALUE = (2..10).to_a
-  VALUE << :Jack << :Queen << :King << :Ace
 end

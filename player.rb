@@ -1,4 +1,7 @@
 class Player
+  
+  START_MONEY = 100
+    
   attr_reader :name, :money, :hand
 
   def initialize(name)
@@ -40,8 +43,6 @@ class Player
   end
 
   private
-
-  START_MONEY = 100
 
   attr_writer :name, :money, :hand
 end

@@ -2,6 +2,9 @@ require_relative 'deck.rb'
 require_relative 'player.rb'
 
 class BlackJack
+  
+    BANK = 20
+    
   def initialize
     @computer = Player.new('Computer')
     @deck = Deck.new
@@ -37,8 +40,6 @@ class BlackJack
   end
 
   private
-
-  BANK = 20 
 
   def create_player
     puts 'Hello! Welcome to Black Jack!'
