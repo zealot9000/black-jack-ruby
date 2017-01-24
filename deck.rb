@@ -2,7 +2,6 @@ require_relative 'card.rb'
 
 class Deck
   
-  
   SUITES = ['♠', '♣', '♥', '♦']
   VALUE = (2..10).to_a
   VALUE << :Jack << :Queen << :King << :Ace
