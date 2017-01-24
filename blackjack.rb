@@ -3,7 +3,7 @@ require_relative 'player.rb'
 
 class BlackJack
   
-    BANK = 20
+  BANK = 20
     
   def initialize
     @computer = Player.new('Computer')
