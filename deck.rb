@@ -4,7 +4,7 @@ class Deck
   attr_reader :cards
 
   def initialize
-    @cards = create_deck#.shuffle!
+    @cards = create_deck.shuffle!
   end
 
   def draw(number_of_cards = 1)
@@ -28,7 +28,7 @@ class Deck
         deck.push(Card.new(s, v))
       end
     end
-    deck.shuffle!
+    deck
   end
 
   private 
