@@ -18,7 +18,7 @@ class BlackJack
       loop do
         player_info
         print_menu
-        break if @player.hand.size == 3 || @computer.hand.size == 3
+        break if @player.hand_full? || @computer.hand_full?
 
         choice = gets.chomp.to_i
         case choice
@@ -55,7 +55,7 @@ class BlackJack
   def game_reset
     @player.reset
     @computer.reset
-    make_rate
+    make_rates
   end
 
   def first_draw
@@ -63,7 +63,7 @@ class BlackJack
     @computer.hand.push(*@deck.draw(2))
   end 
 
-  def make_rate
+  def make_rates
     @player.make_rate
     @computer.make_rate
   end

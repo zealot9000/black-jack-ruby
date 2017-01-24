@@ -23,6 +23,14 @@ class Player
   def reset
     @hand.clear
   end
+  
+  def hand_full?
+    if @hand.length == 3
+      true
+    else
+      false
+    end  
+  end  
 
   def card_sum
     card_sum = 0

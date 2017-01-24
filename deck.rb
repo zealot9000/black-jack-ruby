@@ -3,7 +3,7 @@ require_relative 'card.rb'
 class Deck
   
   
-  SUITE = ['♠', '♣', '♥', '♦']
+  SUITES = ['♠', '♣', '♥', '♦']
   VALUE = (2..10).to_a
   VALUE << :Jack << :Queen << :King << :Ace
   
@@ -24,13 +24,9 @@ class Deck
   private
 
   def create_deck
-    suite = SUITE
-    value = VALUE
-
     deck = []
-
-    suite.each do |s|
-      value.each do |v|
+    SUITES.each do |s|
+      VALUE.each do |v|
         deck.push(Card.new(s, v))
       end
     end
