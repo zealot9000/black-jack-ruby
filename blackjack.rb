@@ -31,7 +31,6 @@ class BlackJack
             computer_step
           break
         end
-
       end
       print_win_menu
       choice = gets.chomp.to_i
